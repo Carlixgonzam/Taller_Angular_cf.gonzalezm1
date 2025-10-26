@@ -1,0 +1,33 @@
+<p>serie-list works!</p>
+<div class="container-fluid">
+    <div class="col-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="h4">Id Serie</th>
+            <th class="h4">Serie's name</th>
+            <th class="h4">Chanel</th>
+            <th class="h4">Season</th>
+            <th class="h4">Description</th>
+            <th class="h4">url imagen</th>
+            <th class="h4">url pagina</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of series">
+              <td>{{ c.id }}</td>
+              <td>{{ c.name }}</td>
+              <td>{{ c.channel }}</td>
+              <td>{{ c.seasons }}</td>
+              <td>{{ c.description }}</td>
+              <td>
+                <a [href]="c.urlimagen" target="_blank">Ver Imagen</a>
+              </td>
+              <td>
+                <a [href]="c.urlpagina" target="_blank">Ver Página</a>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>

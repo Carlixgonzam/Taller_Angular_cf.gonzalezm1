@@ -1,16 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SerieList } from './serie-list/serie-list';
-
-
+import { SerieList } from './serie-list/serie-list'; 
 
 @NgModule({
-  declarations: [
-    SerieList
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports:[SerieList]
+  declarations: [SerieList],
+  imports: [CommonModule],
+  exports: [SerieList], 
 })
-export class SerieModule { }
+export class SerieModule {}

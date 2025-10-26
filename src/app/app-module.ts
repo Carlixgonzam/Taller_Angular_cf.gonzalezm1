@@ -1,19 +1,31 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { HttpErrorInterceptorService } from './interceptors/http-error-interceptor.service'; 
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { App } from './app';
 import { SerieModule } from './serie/serie-module';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [App],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SerieModule, HttpClientModule],
+    SerieModule, HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,}),
+    ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptorService,
+      multi: true,
+    },
   ],
   bootstrap: [App]
 })

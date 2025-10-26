@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { SerieList } from './serie-list';
-import { SerieService } from '../serie.service';
+import { SerieList } from '../serie/serie-list/serie-list';
+import { SerieService } from '../serie/serie.service';
 
-describe('SerieList', () => {
+describe('SerieListComponent', () => {
   let component: SerieList;
   let fixture: ComponentFixture<SerieList>;
 
@@ -12,7 +12,7 @@ describe('SerieList', () => {
     await TestBed.configureTestingModule({
       declarations: [SerieList],
       imports: [HttpClientTestingModule], 
-      providers: [SerieService],         
+      providers: [SerieService]         
     }).compileComponents();
 
     fixture = TestBed.createComponent(SerieList);

@@ -4,13 +4,11 @@ import { Observable } from 'rxjs';
 import { Serie } from './serie';
 import { environment } from '../../environments/environment.development';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class SerieService {
-  private apiUrl=environment.baseUrl + 'series.json';
-  constructor(private http: HttpClient){}
-  getSeries(): Observable<Serie[]>{
+  private apiUrl = environment.baseUrl + 'series.json';
+  constructor(private http: HttpClient) {}
+  getSeries(): Observable<Serie[]> {
     return this.http.get<Serie[]>(this.apiUrl);
   }
 }

@@ -6,6 +6,7 @@ export class Serie {
     description:string;
     urlpagina:string;
     urlimagen:string;
+    
     public constructor(id:number,name:string,channel:string,seasons:number,description:string,urlpagina:string,urlimagen:string){
         this.id=id;
         this.name=name;

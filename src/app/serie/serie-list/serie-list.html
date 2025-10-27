@@ -1,33 +1,42 @@
-<p>serie-list works!</p>
-<div class="container-fluid">
-    <div class="col-6">
-      <table class="table">
-        <thead>
+<div class="container my-4">
+    <h2 class="mb-3">Lista de series</h2>
+  
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
           <tr>
-            <th class="h4">Id Serie</th>
-            <th class="h4">Serie's name</th>
-            <th class="h4">Chanel</th>
-            <th class="h4">Season</th>
-            <th class="h4">Description</th>
-            <th class="h4">url imagen</th>
-            <th class="h4">url pagina</th>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Channel</th>
+            <th scope="col">Seasons</th>
+            <th scope="col" style="min-width: 320px;">Description</th>
+            <th scope="col">Poster</th>
+            <th scope="col">Webpage</th>
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let c of series">
-              <td>{{ c.id }}</td>
-              <td>{{ c.name }}</td>
-              <td>{{ c.channel }}</td>
-              <td>{{ c.seasons }}</td>
-              <td>{{ c.description }}</td>
-              <td>
-                <a [href]="c.urlimagen" target="_blank">Ver Imagen</a>
-              </td>
-              <td>
-                <a [href]="c.urlpagina" target="_blank">Ver Página</a>
-              </td>
-            </tr>
-          </tbody>
+          <tr *ngFor="let c of series">
+            <td>{{ c.id }}</td>
+            <td>{{ c.name }}</td>
+            <td>{{ c.channel }}</td>
+            <td>{{ c.seasons }}</td>
+            <td class="text-wrap">{{ c.description }}</td>
+            <td>
+              <img
+                [src]="c.urlimagen"
+                [alt]="c.name + ' poster'"
+                class="img-thumbnail"
+                style="max-width: 120px; height: auto;"
+                referrerpolicy="no-referrer"
+              />
+            </td>
+            <td>
+              <a [href]="c.urlpagina" target="_blank" rel="noopener">Ver página</a>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
+  
+    <p class="fw-bold text-end mt-2">Seasons average: {{ averageSeasons }}</p>
   </div>

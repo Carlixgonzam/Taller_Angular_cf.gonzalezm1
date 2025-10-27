@@ -32,5 +32,10 @@ export class SerieList implements OnInit{
   ngOnInit(){
     this.getSeriesList();
   }
+  selectedSerie: Serie | null = null;
+
+  selectSerie(serie: Serie): void {
+    this.selectedSerie = serie;
+  }
 
 }

@@ -4,16 +4,16 @@ export class Serie {
     channel: string;
     seasons:number;
     description:string;
-    urlpagina:string;
-    urlimagen:string;
-    
-    public constructor(id:number,name:string,channel:string,seasons:number,description:string,urlpagina:string,urlimagen:string){
+    webpage:string;
+    poster:string;
+
+    public constructor(id:number,name:string,channel:string,seasons:number,description:string,webpage:string,poster:string){
         this.id=id;
         this.name=name;
         this.channel=channel;
         this.seasons=seasons;
         this.description=description;
-        this.urlpagina=urlpagina;
-        this.urlimagen=urlimagen;
+        this.webpage=webpage;
+        this.poster=poster;
     }
 }

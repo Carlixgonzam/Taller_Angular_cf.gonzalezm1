@@ -1,39 +1,50 @@
-<div class="container my-4">
+<div class="container-xxl my-4">
     <h2 class="mb-3">Lista de series</h2>
   
     <div class="table-responsive">
-      <table class="table table-striped table-hover align-middle">
+      <table class="table table-striped table-hover align-middle w-100">
         <thead class="table-dark">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
             <th scope="col">Channel</th>
             <th scope="col">Seasons</th>
-            <th scope="col" style="min-width: 320px;">Description</th>
+            <th scope="col" style="min-width: 360px;">Description</th>
             <th scope="col">Poster</th>
             <th scope="col">Webpage</th>
           </tr>
         </thead>
+  
         <tbody>
-          <tr *ngFor="let c of series">
-            <td>{{ c.id }}</td>
-            <td>{{ c.name }}</td>
-            <td>{{ c.channel }}</td>
-            <td>{{ c.seasons }}</td>
-            <td class="text-wrap">{{ c.description }}</td>
-            <td>
-              <img
-                [src]="c.urlimagen"
-                [alt]="c.name + ' poster'"
-                class="img-thumbnail"
-                style="max-width: 120px; height: auto;"
-                referrerpolicy="no-referrer"
-              />
-            </td>
-            <td>
-              <a [href]="c.urlpagina" target="_blank" rel="noopener">Ver página</a>
-            </td>
-          </tr>
+            <tr *ngFor="let c of series">
+                <td>{{ c.id }}</td>
+                <td>{{ c.name }}</td>
+                <td>{{ c.channel }}</td>
+                <td>{{ c.seasons }}</td>
+                <td class="text-wrap">{{ c.description }}</td>
+                <td>
+                  <img
+                    [src]="c.poster"
+                    [alt]="c.name + ' poster'"
+                    class="img-thumbnail"
+                    style="max-width: 140px; height: auto;"
+                    referrerpolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
+
+                  />
+                </td>
+              
+                <td>
+                  <a
+                    [attr.href]="c.webpage"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-sm btn-outline-primary">
+                    Ir a la página
+                  </a>
+                </td>
+              </tr>
         </tbody>
       </table>
     </div>
